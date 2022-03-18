@@ -1,16 +1,10 @@
-"use strict";
-
-const withBundleAnalyzer = require("@next/bundle-analyzer")({
-  enabled: process.env.ANALYZE === "true",
-});
-
-module.exports = withBundleAnalyzer({
+module.exports = {
   images: {
     domains: ["www.notion.so", "images.unsplash.com"],
   },
   async redirects() {
     return [
-      // redirect the index page to our notion test suite
+      // redirect the index page to our notion root page
       {
         source: "/",
         destination: "/7bb5735650a646bd91cd6d03b68a736c",
@@ -20,4 +14,4 @@ module.exports = withBundleAnalyzer({
       },
     ];
   },
-});
+};
